@@ -1,0 +1,133 @@
+📚 우리 영어 스터디
+틀려도 OK, 칭찬 먼저 😊
+내 닉네임 (개인 피드 및 스터디원들에게 보여요)
+저장
+⚠️ 파이어베이스가 연결되지 않았거나 오프라인 상태예요.
+🎬 오늘의 추천 영상
+유튜브에서 보기 ▶
+원어민이 자주 쓰는 표현 3개 받기
+📌 스터디 규칙
+1. 하루 1문장! 오늘 만든 영어 문장 올리기
+2. 틀려도 OK, 칭찬 먼저
+3. 일요일엔 틀린 문장 같이 고치기
+4. 못 올린 날은 다음 날 2문장!
+✍️ 오늘의 문장 & AI 검사
+스터디에 올리기AI 문법/의도 검사
+💬 전체 스터디 피드
+불러오는 중…
+❌ 오답노트
+문장 만들기나 OPIc 연습에서 틀렸던 표현들을 모아두고 복습하세요.
+오답노트 추가
+불러오는 중…
+✅ 출석 체크
+오늘 출석하기
+불러오는 중…
+🎯 매일 다른 문법 퀴즈
+🎤 OPIc & 에바(EVA) 면접 연습
+주제를 고르고 에바의 음성 질문을 들은 뒤, 음성 타이핑으로 답변해 보세요!
+선택 주제돌발 주제롤플레잉
+단일 문제콤보 세트 (3문제)
+다른 질문 받기한글 뜻: 켜짐
+🎓 에바와 실전 모의시험 (3문제)
+💡 답변 구조: ① 대답 → ② 이유 → ③ 경험·예시 → ④ 마무리
+내 답변 작성🎤 음성 타이핑 시작
+마이크 버튼을 눌러 영어로 말하면 텍스트로 자동 입력됩니다.
+에바(AI) 피드백 받기⭐ 나만의 스크립트에 저장
+👤 내 개인 피드 & 스터디 노트
+내가 작성한 문장과 저장한 나만의 오픽 스크립트를 모아보는 공간입니다.
+⭐ 저장한 나만의 스크립트
+저장된 스크립트가 없어요. OPIc 피드백에서 저장해 보세요!
+✍️ 내가 올린 문장 모음
+작성한 문장이 없어요.
+OPIc 실전 모의고사EVA Speaking Test
+종료 ✕
+EVA
+AI 면접관
+⏱ 남은 시간
+02:00
+🎤 답변 시작🔁 질문 다시 듣기문제 보기/숨기기다음 문제 ▶
+ // ========================================== const firebaseConfig = { apiKey: "YOUR_API_KEY", authDomain: "YOUR_AUTH_DOMAIN", projectId: "YOUR_PROJECT_ID", storageBucket: "YOUR_STORAGE_BUCKET", messagingSenderId: "YOUR_MESSAGING_SENDER_ID", appId: "YOUR_APP_ID" }; // 파이어베이스 초기화 let db = null; try { firebase.initializeApp(firebaseConfig); db = firebase.firestore(); } catch(e) { console.log("Firebase initialization failed:", e); } const $=id=>document.getElementById(id); const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&','<':'<','>':'>','"':'"'}[c])); const tabs=[['home','🏠','홈'],['board','✍️','문장'],['mist','❌','오답노트'],['att','✅','출석'],['quiz','🎯','퀴즈'],['opic','🎤','OPIc'],['myfeed','👤','내 피드']]; $('nav').innerHTML=tabs.map(t=>`${t[1]}${t[2]}`).join(''); $('nav').onclick=e=>{const b=e.target.closest('button');if(!b)return; document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id===b.dataset.t)); document.querySelectorAll('nav button').forEach(x=>x.classList.toggle('on',x===b));scrollTo(0,0); if(b.dataset.t==='myfeed')loadMyFeed();}; let nick='';try{nick=localStorage.getItem('nick')||''}catch(e){} $('nick').value=nick; $('saveNick').onclick=()=>{nick=$('nick').value.trim();try{localStorage.setItem('nick',nick)}catch(e){}$('saveNick').textContent='저장됨 ✓';loadMyFeed();}; const myName=()=>nick||'익명'; const ymd=d=>{const x=new Date(d);return x.getFullYear()+'-'+String(x.getMonth()+1).padStart(2,'0')+'-'+String(x.getDate()).padStart(2,'0')}; $('today').textContent='오늘은 '+ymd(Date.now())+' 이에요'; let sample=null,uid='user_'+Math.random().toString(36).slice(2,8); try{uid=localStorage.getItem('uid')||uid;localStorage.setItem('uid',uid)}catch(e){} const T=[['일요일: 한 주 복습','English review weekly beginner speaking practice'],['월요일: be동사 (am/is/are)','English beginner am is are lesson'],['화요일: 일반동사와 3인칭 s','English third person singular s he she it lesson'],['수요일: 부정문 don’t / doesn’t','English do not does not negative sentences beginner'],['목요일: 의문문 Do / Does','English do does questions beginner lesson'],['금요일: 일상 대화 표현','everyday English conversation native speakers beginner'],['토요일: 영어 쉐도잉','English shadowing practice beginner slow']]; const tp=T[new Date().getDay()]; $('vTopic').textContent='오늘 주제 · '+tp[0]; $('vLink').href='https://www.youtube.com/results?search_query='+encodeURIComponent(tp[1]); function empty(id){$(id).innerHTML='
+아직 아무것도 없어요. 첫 번째로 올려보세요!
+'} function toast(m){let t=$('toast');if(!t){t=document.createElement('div');t.id='toast';t.style.cssText='position:fixed;left:12px;right:12px;bottom:84px;background:#2b2a33;color:#fff;padding:14px;border-radius:12px;z-index:50;font-size:15px;max-width:616px;margin:auto;white-space:pre-line';document.body.appendChild(t)}t.textContent=m;t.style.display='block';clearTimeout(t._h);t._h=setTimeout(()=>t.style.display='none',7000)} function fail(){toast('저장하지 못했어요. 파이어베이스 설정을 확인해 주세요.')} (async()=>{ try{sample=await claude.use('sample')}catch(e){} if(sample){$('sChk').style.display='inline-block';$('xBox').style.display='block'} if(!db){$('offline').style.display='block';['sList','mList','aList','scriptList','mySentenceList'].forEach(empty);loadQuiz();return} db.collection('sentences').orderBy('ts','desc').limit(60).onSnapshot(s=>{ if(s.empty)return empty('sList'); $('sList').innerHTML=s.docs.map(d=>{const x=d.data();return `
+${esc(x.name)} · ${ymd(x.ts)}
+${esc(x.text)}
+${x.ko?`${esc(x.ko)}
+`:''}${x.uid===uid?`삭제`:''}
+`}).join('')},()=>empty('sList')); db.collection('mistakes').orderBy('ts','desc').limit(60).onSnapshot(s=>{ if(s.empty)return empty('mList'); $('mList').innerHTML=s.docs.map(d=>{const x=d.data();return `
+${esc(x.name)} · ${ymd(x.ts)}
+${esc(x.wrong)}
+✔ ${esc(x.right)}
+${esc(x.why)}
+${x.uid===uid?`삭제`:''}
+`}).join('')},()=>empty('mList')); db.collection('attendance').orderBy('ts','desc').limit(100).onSnapshot(s=>{ if(s.empty)return empty('aList'); const by={};s.docs.forEach(d=>{const x=d.data();(by[x.date]=by[x.date]||[]).push(x.name)}); $('aList').innerHTML=Object.keys(by).sort().reverse().slice(0,10).map(k=>`
+${esc(k)}(${by[k].length}명)${by[k].map(n=>`${esc(n)}`).join('')}
+`).join('')},()=>empty('aList')); loadQuiz(); })(); async function loadMyFeed(){ if(!db){empty('scriptList');empty('mySentenceList');return} try{ const sSnap=await db.collection('scripts').where('uid','==',uid).get(); if(sSnap.empty)empty('scriptList'); else $('scriptList').innerHTML=sSnap.docs.map(d=>{const x=d.data();return `
+${ymd(x.ts)}
+${esc(x.script)}
+삭제
+`}).join(''); const sentSnap=await db.collection('sentences').where('uid','==',uid).get(); if(sentSnap.empty)empty('mySentenceList'); else $('mySentenceList').innerHTML=sentSnap.docs.map(d=>{const x=d.data();return `
+${ymd(x.ts)}
+${esc(x.text)}
+${x.ko?`${esc(x.ko)}
+`:''}
+`}).join(''); }catch(e){console.error(e)} } $('sList').onclick=e=>{const b=e.target.closest('[data-del]');if(!b||!db)return; db.collection('sentences').doc(b.dataset.del).delete().catch(fail)}; $('mList').onclick=e=>{const b=e.target.closest('[data-del-m]');if(!b\vert{}\vert{}!db)return; db.collection('mistakes').doc(b.dataset.delM).delete().catch(fail)};$('scriptList').onclick=e=>{const b=e.target.closest('[data-del-script]');if(!b||!db)return; db.collection('scripts').doc(b.dataset.delScript).delete().then(loadMyFeed).catch(fail)}; const OQ={'자기소개':[['Tell me about yourself.','자기소개를 해 보세요.'],['What do you do? Do you work or study?','무슨 일을 하세요? 일을 하나요, 공부를 하나요?']],'집':[['Describe your home.','당신의 집을 설명해 보세요.'],['What do you usually do at home?','집에서 보통 무엇을 하나요?']],'취미':[['What do you like to do in your free time?','여가 시간에 무엇을 하는 걸 좋아하나요?'],['Tell me about your favorite hobby.','가장 좋아하는 취미에 대해 말해 보세요.']],'음식':[['What is your favorite food? Why do you like it?','가장 좋아하는 음식은? 왜 좋아하나요?'],['Do you cook at home? What do you make?','집에서 요리하나요? 무엇을 만드나요?']],'일상':[['Describe your typical day.','보통 하루를 설명해 보세요.'],['What do you do in the morning?','아침에 무엇을 하나요?']],'친구':[['Tell me about your best friend.','가장 친한 친구에 대해 말해 보세요.'],['What do you do with your friends on weekends?','주말에 친구들과 무엇을 하나요?']],'여행':[['Do you like to travel? Where did you go last time?','여행을 좋아하나요? 마지막으로 어디에 갔나요?'],['Tell me about a place you want to visit.','가 보고 싶은 곳에 대해 말해 보세요.']]}; const oSel=$('oTopic');oSel.innerHTML=Object.keys(OQ).map(k=>`${k}`).join(''); let oq=null, combo=false, cq=[], ci=0; const OS=[['Tell me about banks in your country. What are they like?','은행에 대해 말해 보세요. 어떤가요?'],['How do you use the internet in your daily life?','일상에서 인터넷을 어떻게 사용하나요?'],['What is the weather like in your country? Which season do you like?','날씨는 어떤가요? 어떤 계절을 좋아하나요?'],['Do you recycle? How do people recycle in your country?','재활용을 하나요? 사람들은 어떻게 하나요?'],['What kind of clothes do you usually wear?','보통 어떤 옷을 입나요?'],['Tell me about a hotel you stayed at.','묵었던 호텔에 대해 말해 보세요.']]; const OR=[['You want to book a table at a restaurant. Call the restaurant and ask three questions about it.','식당 예약 전화: 식당에 대해 질문 3개 하기'],['You lost your bag on a trip. Explain the problem to the hotel staff and ask for help.','여행 중 가방 분실: 호텔 직원에게 상황 설명하고 도움 요청하기'],['Your friend is moving. Call your friend and ask three questions about the new home.','친구가 이사함: 새 집에 대해 질문 3개 하기']]; const OT=['banks','the internet','weather','recycling','fashion','hotels','libraries','home appliances']; function showC(i){ci=i;oq=[cq[i].en,cq[i].ko];$('oAns').value='';$('oRes').innerHTML='';$('oQ').innerHTML=`
+콤보 ${i+1}/3 · ${esc(cq[i].label)}${esc(cq[i].en)}
+${esc(cq[i].ko)}
+`; const n=$('oNext');n.style.display='inline-block';$('oNew').textContent='새 콤보'; n.textContent=i<2?`다음 문제 ▶ (${i+2}/3)`:'콤보 완료 🎉 새 콤보 받기'; n.onclick=()=>{if(i<2)showC(i+1);else newCombo()}} async function newCombo(){const q=$('oQ');$('oRes').innerHTML='';$('oAns').value='';$('oNext').style.display='none'; if(!sample){q.innerHTML='
+AI 기능을 사용할 수 없습니다.
+';return} q.innerHTML='
+에바가 콤보 질문을 만드는 중…
+'; const spec=omode==='pick'?'Topic chosen: '+oSel.value+'. Q1 describe. Q2 usual habits. Q3 a memorable past experience.':omode==='surp'?'Unexpected topic: '+OT[Math.floor(Math.random()*OT.length)]+'. Q1 description. Q2 general habits. Q3 past experience.':'Everyday roleplay. Q1 ask 3 questions. Q2 explain a problem and suggest alternatives. Q3 past experience.'; try{const a=await sample.json('Write OPIc questions for Korean beginners, 3 connected questions. '+spec+' Reply ONLY a JSON array of 3 objects {"label":"short label","en":"question","ko":"Korean"}.',{cache:false}); cq=a.slice(0,3);showC(0)}catch(e){q.innerHTML='
+질문을 만들지 못했어요. 다시 눌러 주세요.
+'}} let omode='pick'; function newQ(){if(combo){newCombo();return}$('oNext').style.display='none';$('oNew').textContent='다른 질문';const a=omode==='pick'?OQ[oSel.value]:omode==='surp'?OS:OR;oq=a[Math.floor(Math.random()*a.length)];oSel.style.display=omode==='pick'?'block':'none';$('oQ').innerHTML=`
+${{pick:'선택 주제',surp:'돌발 주제',role:'롤플레잉'}[omode]}${esc(oq[0])}
+${esc(oq[1])}
+`;$('oRes').innerHTML=''} document.querySelectorAll('[data-om]').forEach(b=>b.onclick=()=>{omode=b.dataset.om;document.querySelectorAll('[data-om]').forEach(x=>x.classList.toggle('on',x===b));$('oAns').value='';newQ()}); document.querySelectorAll('[data-ct]').forEach(b=>b.onclick=()=>{combo=b.dataset.ct==='1';document.querySelectorAll('[data-ct]').forEach(x=>x.classList.toggle('on',x===b));$('oAns').value='';newQ()});$('oNew').onclick=newQ;oSel.onchange=newQ;newQ(); const SR=window.SpeechRecognition||window.webkitSpeechRecognition; let rec=null,recOn=false,recBase=''; $('oMic').onclick=()=>{ const m=$('oMicMsg'); if(!SR){m.textContent='이 브라우저는 음성 인식을 지원하지 않아요.';return} if(recOn){rec.stop();return} recBase=$('oAns').value.trim(); try{ rec=new SR();rec.lang='en-US';rec.continuous=true;rec.interimResults=true; rec.onresult=e=>{let t='';for(let i=0;i{m.textContent='음성 인식 오류: '+e.error}; rec.onend=()=>{recOn=false;$('oMic').textContent='🎤 음성 타이핑 시작';m.textContent='인식 완료! 내용을 확인하고 피드백을 받아 보세요.'}; rec.start();recOn=true;$('oMic').textContent='⏹ 멈추기';m.textContent='듣는 중… 영어로 자연스럽게 말씀해 보세요.'; }catch(e){m.textContent='음성 인식을 시작할 수 없습니다.'} }; $('oGo').onclick=async()=>{const a=$('oAns').value.trim();if(!a)return;const r=$('oRes'); if(!sample){r.innerHTML='
+AI 기능을 사용할 수 없습니다.
+';return} r.innerHTML='
+에바(AI)가 답변을 분석하고 습관을 진단하는 중…
+'; try{const v=await sample.json('You are an OPIc coach for Korean beginners. Question: <<<'+oq[0]+'>>>\nAnswer: <<<'+a+'>>>\nReply ONLY JSON: {"level":"rough level e.g. Intermediate Low","good":"Korean strengths","issues":"Korean grammar/expression problems","fixed":"corrected answer keeping ideas","model":"model answer 4-5 sentences","habits":"Korean analysis of speaking habits (fillers, repetition, sentence length, tone)","tip":"one Korean tip"}',{cache:false}); r.innerHTML=`
+${esc(v.level)}
+👍 ${esc(v.good)}
+${esc(v.issues)}
+✏️ 고친 내 답변
+${esc(v.fixed)}
+⭐ 모범 답안
+${esc(v.model)}
+💡 ${esc(v.tip)}
+${v.habits?`
+🗣️ 말 습관 분석
+${esc(v.habits)}
+`:''}` }catch(e){r.innerHTML='
+피드백을 생성하지 못했습니다. 다시 시도해 주세요.
+'}}; $('saveScriptBtn').onclick=async()=>{ const ans=$('oAns').value.trim(); if(!ans){toast('저장할 답변 내용이 없어요!');return} if(!db){toast('파이어베이스가 연결되지 않았습니다.');return} try{ await db.collection('scripts').add({uid:uid,name:myName(),script:ans,ts:Date.now()}); toast('나만의 스크립트에 저장되었습니다! (내 피드에서 확인)'); }catch(e){fail()} }; let noko=false;try{noko=localStorage.getItem('noko')==='1'}catch(e){} function applyKo(){document.body.classList.toggle('noko',noko);$('oKo').textContent='한글 뜻: '+(noko?'꺼짐':'켜짐');try{localStorage.setItem('noko',noko?'1':'0')}catch(e){}} $('oKo').onclick=()=>{noko=!noko;applyKo()};applyKo(); let ex={set:[],i:0,plays:2,left:120,t:null,show:false}; const fmt=l=>String(Math.floor(l/60)).padStart(2,'0')+':'+String(l%60).padStart(2,'0'); async function getSet(){ if(sample){try{const a=await sample.json('Write an OPIc mock test of 3 connected questions in simple English, reply ONLY JSON array of 3 objects {"label":"","en":"","ko":""}.',{cache:false});if(Array.isArray(a)&&a.length>=3)return a.slice(0,3)}catch(e){}} return OS.slice(0,3).map(q=>({label:'',en:q[0],ko:q[1]})); } function exQtext(){const q=ex.set[ex.i];$('exQ').innerHTML=ex.show?`
+${esc(q.en)}
+${esc(q.ko)}
+`:'
+에바의 음성 질문을 듣고 답변해 보세요.
+'} function exShowQ(i){ex.i=i;ex.plays=1;ex.show=false;ex.run=false;clearInterval(ex.t);ex.left=120;$('exT').textContent='02:00';$('exT').style.color='';$('exBar').style.width='0\%';$('exN').textContent='Question '+(i+1)+' of 3';exQtext(); $('exBub').textContent='질문 듣는 중...';$('exStart').textContent='🎤 답변 시작';$('exStart').disabled=false;$('exNext').textContent=i<2?'다음 문제 ▶':'시험 종료';speak(ex.set[i].en)} function speak(t){let started=false;const fb=()=>{ex.show=true;exQtext();$('exBub').textContent='답변을 시작해 주세요.'}; if(!('speechSynthesis' in window)){fb();return} try{speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t);u.lang='en-US';u.rate=.9;u.onstart=()=>{started=true;$('exam').classList.add('talk');$('exBub').textContent='에바가 말하고 있어요...'};u.onend=u.onerror=()=>{$('exam').classList.remove('talk');$('exBub').textContent='답변을 시작해 주세요.'};speechSynthesis.speak(u);setTimeout(()=>{if(!started)fb()},1500)}catch(e){fb()}} function exStop(){clearInterval(ex.t);try{speechSynthesis.cancel()}catch(e){}$('exam').classList.remove('talk')} $('exOpen').onclick=async()=>{$('exam').style.display='block';$('exMain').style.display='none';$('exEnd').style.display='block';$('exEnd').innerHTML='
+에바가 시험을 준비하고 있어요…
+'; ex.set=await getSet();$('exEnd').style.display='none';$('exMain').style.display='block';exShowQ(0)};$('exClose').onclick=()=>{exStop();$('exam').style.display='none'};$('exPlay').onclick=()=>{if(ex.plays<=0)return;ex.plays--;speak(ex.set[ex.i].en)}; $('exShow').onclick=()=>{ex.show=!ex.show;exQtext()};$('exStart').onclick=()=>{if(ex.run){ex.run=false;clearInterval(ex.t);$('exStart').textContent='🎤 답변 시작';$('exBub').textContent='일시정지됨';return} ex.run=true;$('exStart').textContent='⏹ 정지';$('exBub').textContent='답변 녹음/말하기 진행 중...'; ex.t=setInterval(()=>{ex.left--;$('exT').textContent=fmt(Math.max(ex.left,0));$('exBar').style.width=Math.min(100,(120-ex.left)/120*100)+'\%';if(ex.left<=0){clearInterval(ex.t);ex.run=false;$('exT').style.color='var(--no)';$('exStart').textContent='🎤 답변 시작';$('exBub').textContent='시간 종료!'}},1000)}; $('exNext').onclick=()=>{if(ex.i<2){exShowQ(ex.i+1);return}exStop();$('exam').style.display='none'}; let lastChk=null; $('sChk').onclick=async()=>{const t=$('sText').value.trim(),ko=$('sKo').value.trim();if(!t\vert{}\vert{}!sample)return;const r=$('sRes');r.innerHTML='
+AI가 문법과 의도를 검사하는 중…
+'; try{const v=await sample.json('You are a kind English teacher. Check sentence and intended Korean. Reply ONLY JSON: {"ok":boolean,"fixed":"corrected","why":"Korean explanation","praise":"encouragement"}.\n<<<'+t+'>>>\nKorean: <<<'+(ko||'none')+'>>>'); lastChk={wrong:t,right:v.fixed,why:v.why}; r.innerHTML=`
+${v.ok?'✅ 완벽해요!':'✏️ 이렇게 수정해 보세요'}
+${esc(v.fixed)}
+${esc(v.why)}
+${esc(v.praise)}
+${v.ok?'':'❌ 오답노트에 바로 저장하기'}
+`; const sv=$('sSave');if(sv)sv.onclick=async()=>{if(!db)return;try{await db.collection('mistakes').add({uid:uid,name:myName(),wrong:lastChk.wrong,right:lastChk.right,why:lastChk.why,ts:Date.now()});sv.textContent='오답노트에 저장되었습니다! ✓'}catch(e){fail()}} }catch(e){r.innerHTML='
+검사하지 못했습니다.
+'}}; $('xBtn').onclick=async()=>{if(!sample)return;const o=$('xOut');o.innerHTML='
+추천 표현 불러오는 중…
+'; try{const a=await sample.json('Topic: '+tp[0]+'. Give 3 short natural English sentences. Reply ONLY JSON array of {"en":"","ko":"","tip":""}.',{cache:false}); o.innerHTML=a.map(x=>`
+${esc(x.en)}
+${esc(x.ko)} · ${esc(x.tip)}
+`).join('')}catch(e){o.innerHTML='오류 발생'}}; $('sAdd').onclick=async()=>{const t=$('sText').value.trim();if(!t||!db)return; try{await db.collection('sentences').add({uid:uid,name:myName(),text:t,ko:$('sKo').value.trim(),ts:Date.now()});$('sText').value='';$('sKo').value='';$('sRes').innerHTML='';toast('문장이 등록되었습니다!')}catch(e){fail()}}; $('mAdd').onclick=async()=>{const w=$('mWrong').value.trim(),r=$('mRight').value.trim();if(!w||!r||!db)return; try{await db.collection('mistakes').add({uid:uid,name:myName(),wrong:w,right:r,why:$('mWhy').value.trim(),ts:Date.now()});['mWrong','mRight','mWhy'].forEach(i=>$(i).value='');toast('오답노트에 추가되었습니다!')}catch(e){fail()}}; $('aBtn').onclick=async()=>{ if(!db){toast('파이어베이스가 연결되지 않았습니다.');return} if(!nick){toast('닉네임을 먼저 저장해 주세요.');return} const d=ymd(Date.now()), key=d+'_'+uid; $('aBtn').disabled=true; try{await db.collection('attendance').doc(key).set({uid:uid,name:myName(),date:d,ts:Date.now()});$('aBtn').textContent='출석 완료 ✓';toast('오늘 출석이 완료되었습니다! 🎉')}catch(e){fail()} $('aBtn').disabled=false}; let Q=[ ['I ___ a student.',['am','is','are'],0,'I 다음엔 am이 옵니다.'], ['She ___ happy.',['am','is','are'],1,'3인칭 단수 주어에는 is가 옵니다.'], ['They ___ my friends.',['is','am','are'],2,'복수 주어에는 are가 옵니다.'], ['He ___ coffee every day.',['like','likes','liking'],1,'3인칭 단수 현재형 동사에는 s를 붙입니다.'] ]; let qi=0,sc=0; function showQ(){ const b=$('qBox');b.dataset.done='x'; if(qi>=Q.length){b.innerHTML=`
+퀴즈 완료! 점수: ${sc} / ${Q.length} 점 🎉
+다시 풀기`;$('qr').onclick=()=>{qi=0;sc=0;showQ()};return} const q=Q[qi]; b.innerHTML=`
+문제 ${qi+1} / ${Q.length}
+${esc(q[0])}
+`+q[1].map((o,i)=>`${esc(o)}`).join('')+'
+'; b.querySelectorAll('.opt').forEach(btn=>btn.onclick=()=>{ const i=+btn.dataset.i;if(b.dataset.done==qi)return;b.dataset.done=qi; if(i===q[2])sc++; b.querySelectorAll('.opt')[q[2]].classList.add('right');if(i!==q[2])btn.classList.add('wrong'); $('qe').textContent=(i===q[2]?'정답입니다! ':'아쉬워요. ')+q[3]; const n=document.createElement('button');n.className='btn ghost';n.textContent='다음 문제 ▶';n.style.marginTop='10px';n.onclick=()=>{qi++;showQ()};b.appendChild(n)}); } function normQ(a){if(!Array.isArray(a))return null;const r=a.filter(x=>x&&x.q&&Array.isArray(x.options)&&x.options.length===3&&[0,1,2].includes(x.answer)).map(x=>[x.q,x.options,x.answer,x.why||'']);return r.length>=4?r:null} async function genQ(){if(!sample)return null;try{return normQ(await sample.json('Write 5 multiple-choice English grammar questions for beginners. Reply ONLY a JSON array of {"q":"","options":["","",""],"answer":0,"why":""}.',{cache:false}))}catch(e){return null}} async function loadQuiz(){const day=ymd(Date.now());$('qBox').innerHTML='
+오늘의 퀴즈를 불러오는 중…
+';let items=null; if(db){try{const d=await db.doc('quiz/'+day).get();if(d.exists)items=normQ(JSON.parse(d.data().json))}catch(e){}} if(!items){items=await genQ();if(items&&db){try{await db.doc('quiz/'+day).set({json:JSON.stringify(items.map(x=>({q:x[0],options:x[1],answer:x[2],why:x[3]})))})}catch(e){}}} if(items){Q=items;$('qTitle').textContent='🎯 오늘의 문법 퀴즈 · '+day}else{$('qTitle').textContent='🎯 문법 퀴즈'} qi=0;sc=0;showQ()}
